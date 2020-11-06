@@ -5,7 +5,7 @@ body {
 #workSpace {
     text-align: center;
     float: center;
-    width: 300px;
+    width: 600px;
     margin-right: auto;
     margin-left: auto;
     border: 1px dashed #574fe563;
@@ -27,6 +27,9 @@ body {
     background: none;
     border: 3px solid #4F92E5;
     outline-color: #3c77c0;
+}
+#descr {
+    color: rgba(128, 128, 128, 0.705);
 }
 .inputs {
     border: 1px dashed #4F92E5;
