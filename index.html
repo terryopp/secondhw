@@ -6,6 +6,7 @@
         <title>Томас Саати</title>
         <link rel="stylesheet" href="style.css" type="text/css">
 
+        <script src="js/ControlTable.js"></script>
         <script src="js/main.js"></script>
     </head>
     <body>
@@ -13,7 +14,8 @@
             <h1>Метод анализа иерархий Томаса Саати</h1>
             Введите критерии:<br/>
             <input id="text" class="inputs"> <br/>
-            <span id="descr">Введите название критерия, затем нажмите клавишу "enter". Таким образом, вы можете добавлять сколь угодно большое количество критериев</span>
+            <span id="descr">Введите название критерия, затем нажмите клавишу "enter". Таким образом, вы можете добавлять сколь угодно большое количество критериев</span><br/><br/>
+            <span id="descr">Ниже автоматически будет появляться таблица</span>
         </div>
         <div id="comment">
             <p style="font-weight: 700">Критерии оценивания:</p>
@@ -23,9 +25,10 @@
             7 - очень сильное превосходство<br/>
             9 - высшее (крайнее) превосходство
         </div>
-        <div id="answer">
-
-        </div>
+        <table id="answer">
+            <tbody>
+            </tbody>
+        </table>
         <div id="by">
             Веселов Глеб, УрФУ, 2020
         </div>
