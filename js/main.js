@@ -10,7 +10,7 @@ window.onload = function() {
       crit.push(text.value);
       text.value = '';
       console.log(crit);
-      table.outputTable(crit);
+      table.creatingTable(crit);
     }
   });
 }
