@@ -9,13 +9,13 @@ body {
     margin-right: auto;
     margin-left: auto;
     border: 1px dashed #574fe563;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     border-radius: 10px;
 }
 #comment {
     text-align: left;
     float: right;
-    margin-top: -170px;
+    margin-top: -210px;
     border: 1px dashed #574fe563;
     padding-bottom: 40px;
     border-radius: 10px;
@@ -27,6 +27,12 @@ body {
     margin-right: auto;
     margin-left: auto;
     border: 1px solid #574fe5a9;
+}
+#list {
+    text-align: center;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #by {
