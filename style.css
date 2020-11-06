@@ -15,7 +15,7 @@ body {
 #comment {
     text-align: left;
     float: right;
-    margin-top: -210px;
+    margin-top: -240px;
     border: 1px dashed #574fe563;
     padding-bottom: 40px;
     border-radius: 10px;
@@ -50,9 +50,15 @@ td {
 #descr {
     color: rgba(128, 128, 128, 0.705);
 }
+#foot {
+    text-align: center;
+}
 .inputs {
-    border: 1px dashed #4F92E5;
+    border: 1px solid #4F92E5;
     border-bottom: 4px double #4F92E5;
     border-radius: 5px;
     outline: none;
+}
+.summ {
+    color: rgb(255, 113, 113);
 }

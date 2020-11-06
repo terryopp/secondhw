@@ -10,8 +10,8 @@ function ControlTable () { // Конструктор класса для выв�
         if (i == 0) cell.append(crit[j]);
         else {
           if (j == 0) cell.append(crit[i]);
-          if (i == j) cell.append('1');
-          if (j != 0 && i != j) cell.innerHTML = '<input id="q'+i+j+'" class="inner" size="1">';
+          if (i == j) cell.innerHTML = '<span id="q'+i+j+'">1.00</span>';
+          if (j != 0 && i != j) cell.innerHTML = '<input id="q'+i+j+'" onchange="innerValue(id)" size="1">';
         }
       }
     }
@@ -21,6 +21,31 @@ function ControlTable () { // Конструктор класса для выв�
     while(table.rows.length > 0) {
       table.deleteRow(0);
     }
-    console.log(table.rows.length);
+  }
+
+  this.showAnswer = (crit) => { // Вычисление суммы и её вывод
+    let amount = crit.length;
+    let summ = 0;
+    let globalSumm = 0;
+    table.rows[0].insertCell(-1).innerHTML = '<span class="summ">СУММА</span>';
+    //ВЫСЧИТЫВАНИЕ СУММЫ
+    for (let i = 1; i < amount; i++) {
+      summ = 1;
+      for (let j = 1; j < amount; j++) {
+        let element = document.getElementById('q'+i+''+j);
+        summ += element.value ? element.value*1 : 0;
+      }
+      globalSumm += summ
+    }
+    //ПРЕОБРАЗОВАНИЕ СУММЫ И ЕЁ ВЫВОД
+    for (let i = 1; i < amount; i++) {
+      summ = 1;
+      let row = table.rows[i];
+      for (let j = 1; j < amount; j++) {
+        let element = document.getElementById('q'+i+''+j);
+        summ += element.value ? element.value*1 : 0;
+      }
+      row.insertCell(-1).innerHTML = `<span class="summ" id="s${i}">${(Math.round(summ/globalSumm*100)/100).toFixed(2)}</span>`;
+    }
   }
 }
