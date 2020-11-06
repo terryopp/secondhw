@@ -5,12 +5,21 @@ body {
 #workSpace {
     text-align: center;
     float: center;
-    width: 600px;
+    width: 500px;
     margin-right: auto;
     margin-left: auto;
     border: 1px dashed #574fe563;
     padding-bottom: 40px;
     border-radius: 10px;
+}
+#comment {
+    text-align: left;
+    float: right;
+    margin-top: -170px;
+    border: 1px dashed #574fe563;
+    padding-bottom: 40px;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 #by {
