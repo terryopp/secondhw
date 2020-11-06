@@ -1,0 +1,36 @@
+body {
+    background-color: #7ff09705;
+}
+
+#workSpace {
+    text-align: center;
+    float: center;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px dashed #574fe563;
+    padding-bottom: 40px;
+    border-radius: 10px;
+}
+
+#by {
+    opacity: 0.1;
+    text-align: center;
+}
+
+#text {
+    margin-bottom: 20px;
+}
+#type {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: none;
+    border: 3px solid #4F92E5;
+    outline-color: #3c77c0;
+}
+.inputs {
+    border: 1px dashed #4F92E5;
+    border-bottom: 4px double #4F92E5;
+    border-radius: 5px;
+    outline: none;
+}
