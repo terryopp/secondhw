@@ -25,27 +25,22 @@ function ControlTable () { // Конструктор класса для выв�
 
   this.showAnswer = (crit) => { // Вычисление суммы и её вывод
     let amount = crit.length;
-    let summ = 0;
+    let summ = [];
     let globalSumm = 0;
     table.rows[0].insertCell(-1).innerHTML = '<span class="summ">СУММА</span>';
     //ВЫСЧИТЫВАНИЕ СУММЫ
     for (let i = 1; i < amount; i++) {
-      summ = 1;
+      summ.push(1);
       for (let j = 1; j < amount; j++) {
         let element = document.getElementById('q'+i+''+j);
-        summ += element.value ? element.value*1 : 0;
+        summ[i-1] += element.value ? element.value*1 : 0;
       }
-      globalSumm += summ
+      globalSumm += summ[i-1]
     }
     //ПРЕОБРАЗОВАНИЕ СУММЫ И ЕЁ ВЫВОД
     for (let i = 1; i < amount; i++) {
-      summ = 1;
       let row = table.rows[i];
-      for (let j = 1; j < amount; j++) {
-        let element = document.getElementById('q'+i+''+j);
-        summ += element.value ? element.value*1 : 0;
-      }
-      row.insertCell(-1).innerHTML = `<span class="summ" id="s${i}">${(Math.round(summ/globalSumm*100)/100).toFixed(2)}</span>`;
+      row.insertCell(-1).innerHTML = `<span class="summ">${(Math.round(summ[i-1]/globalSumm*100)/100).toFixed(2)}</span>`;
     }
   }
 }

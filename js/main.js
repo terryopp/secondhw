@@ -1,10 +1,14 @@
 function innerValue(id) { // Функция для работы со значениями в таблице
   let input = document.getElementById(id);
-  let idInv = 'q' + id[2] + id[1];
-  let value = 0;
-  eval(`value = 1/(${input.value});`);
-  eval(`input.value = (${input.value}).toFixed(2);`);
-  document.getElementById(idInv).value = value.toFixed(2);
+  if (!isNaN(input.value)) {
+    let idInv = 'q' + id[2] + id[1];
+    let value = 0;
+    eval(`value = 1/(${input.value});`);
+    eval(`input.value = (${input.value}).toFixed(2);`);
+    document.getElementById(idInv).value = value.toFixed(2);
+  } else {
+    input.value = '';
+  }
 };
 
 window.onload = function() {
@@ -25,7 +29,19 @@ window.onload = function() {
     }
   });
 
-  button.addEventListener('click', () => {
-    table.showAnswer(crit);
+  button.addEventListener('click', () => { // Кнопка "Вычислить"/"Перезаписать"
+    switch(button.value) {
+      case 'Вычислить':
+        table.showAnswer(crit);
+        button.value = 'Перезаписать'
+        break;
+      case 'Перезаписать':
+        table.deletingTable();
+        crit.splice(1, crit.length - 1);
+        button.value = 'Вычислить'
+        button.disabled = true;
+        break;
+    }
+    
   });
 }
